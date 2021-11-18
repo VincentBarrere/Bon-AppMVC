@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Open+Sans:wght@300;400;700&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #feffde;
+}
+h1,
+h2,
+h3 {
+  font-family: "Merienda", cursive;
+}
+#head {
+  background-image: url("../img/background-header-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+#nav {
+  background-color: #91c788 !important;
+}
+section-1 {
+  height: 50rem;
+}
+#presentation {
+  border: 1px solid black;
+  background-color: #91c788;
+  padding: 1rem;
+  border-radius: 20px;
+}
+.utilisateur {
+  text-align: end;
+}
