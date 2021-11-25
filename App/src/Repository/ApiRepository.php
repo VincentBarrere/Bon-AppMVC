@@ -19,7 +19,7 @@ class ApiRepository extends ManagerRepository
         $ch = curl_init();
 
         curl_setopt_array($ch, [
-            CURLOPT_URL => "https://api.spoonacular.com/recipes/complexSearch?query=pasta&number=10&apiKey={$this->apiKey}",
+            CURLOPT_URL => "https://api.spoonacular.com/recipes/complexSearch?query=pea&number=12&apiKey={$this->apiKey}",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_TIMEOUT => 1
         ]);

@@ -10,7 +10,7 @@ class BonappController
 
     public function __construct()
     {
-        $this->apiRepository = new ApiRepository('46f646e07c1946fdbbd02dc7c56c7527');
+        $this->apiRepository = new ApiRepository('c5c275385d3e48b3a9d10e5b96c15a04');
     }
 
     public function home()
@@ -19,7 +19,7 @@ class BonappController
     }
     public function recipe()
     {
-        // $recipes = $this->apiRepository->callSpoonByIngredients();
+        $recipes = $this->apiRepository->callSpoonByIngredients();
         require "../templates/recipe.php";
     }
 }
