@@ -64,14 +64,12 @@
     <section id="section-1">
         <div class="container mt-5">
             <div class="row">
-                <ul class="d-flex flex-wrap justify-content-around">
+                <ul class="d-flex flex-wrap justify-content-evenly">
                     <?php foreach ($recipes as $recipe) : ?>
-                        <div class="">
-                            <li class="list-group-item mb-4 ms-3 col-md-3">
-                                <h2 class="text-center fs-3"><?= $recipe["title"] ?></h2>
-                                <img class="w-100" src="<?= $recipe["img"] ?>" alt="" srcset="">
-                            </li>
-                        </div>
+                        <li class="list-group-item mb-4 ms-1 col-md-3">
+                            <h2 class="text-center fs-3"><?= $recipe["title"] ?></h2>
+                            <img class="w-100" src="<?= $recipe["img"] ?>" alt="" srcset="">
+                        </li>
                     <?php endforeach ?>
                 </ul>
             </div>
