@@ -30,3 +30,6 @@ section-1 {
 .utilisateur {
   text-align: end;
 }
+li{
+  list-style: none;
+}

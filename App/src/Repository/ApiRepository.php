@@ -2,33 +2,42 @@
 
 namespace App\src\Repository;
 
+use App\src\Repository\ManagerRepository;
 
-class ApiRepository
+
+class ApiRepository extends ManagerRepository
 {
-    private $key;
+    private $apiKey;
 
     public function __construct(string $apiKey)
     {
-        $this->key = $apiKey;
+        $this->apiKey = $apiKey;
     }
 
     public function callSpoonByIngredients()
     {
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, "https://api.spoonacular.com/recipes/716429/information?apiKey=46f646e07c1946fdbbd02dc7c56c7527&includeNutrition=false");
-
+        curl_setopt_array($ch, [
+            CURLOPT_URL => "https://api.spoonacular.com/recipes/complexSearch?query=pasta&number=10&apiKey={$this->apiKey}",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT => 1
+        ]);
         $data = curl_exec($ch);
-        $result = $data;
-
         $err = curl_error($ch);
         curl_close($ch);
-
-
         if ($err) {
             echo "cURL Error #:" . $err;
         } else {
-            return $result;
+            $results = [];
+            $data = json_decode($data, true);
+            foreach ($data["results"] as $recipe) {
+                $results[] = [
+                    "title" => $recipe["title"],
+                    "img" => $recipe["image"]
+                ];
+            }
+            return $results;
         }
     }
 }

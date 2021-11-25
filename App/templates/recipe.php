@@ -33,17 +33,7 @@
                     <div class="navbar-nav">
                         <a class="nav-link active me-md-5" aria-current="page" href="index.php">Accueil</a>
                         <a class="nav-link me-md-5 ms-md-5" href="?route=choice">Selection</a>
-                        <li class="nav-item dropdown me-md-5 ms-md-5">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Recettes
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Entrées</a></li>
-                                <li><a class="dropdown-item" href="#">Plats</a></li>
-                                <li><a class="dropdown-item" href="#">Desserts</a></li>
-                                <li><a class="dropdown-item" href="#">Autres</a></li>
-                            </ul>
-                        </li>
+                        <a class="nav-link me-md-5 ms-md-5" href="?route=recipe">Recettes</a>
                         <li class="nav-item dropdown me-md-5 ms-md-5">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Contact
@@ -74,11 +64,13 @@
     <section id="section-1">
         <div class="container">
             <div class="row">
-
-                <?php
-                echo $recipes;
-                ?>
-
+                <ul>
+                    <?php foreach ($recipes as $recipe) : ?>
+                        <li><?= $recipe["title"] ?>
+                            <img src="<?= $recipe["img"] ?>" alt="" srcset="">
+                        </li>
+                    <?php endforeach ?>
+                </ul>
             </div>
         </div>
     </section>
