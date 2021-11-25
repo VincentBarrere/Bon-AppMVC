@@ -74,13 +74,11 @@
     <section id="section-1">
         <div class="container">
             <div class="row">
-                <div id="presentation" class="col-md-12 mt-5">
-                    <?php
-                    foreach ($recipes as $recipe) {
-                        var_dump($recipe);
-                    }
-                    ?>
-                </div>
+
+                <?php
+                echo $recipes;
+                ?>
+
             </div>
         </div>
     </section>

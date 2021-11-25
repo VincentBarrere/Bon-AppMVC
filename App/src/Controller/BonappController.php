@@ -10,16 +10,16 @@ class BonappController
 
     public function __construct()
     {
-        $this->apiRepository = new ApiRepository('ef46cbc3fda74c139c6587a8b514823e');
+        $this->apiRepository = new ApiRepository('46f646e07c1946fdbbd02dc7c56c7527');
     }
 
     public function home()
     {
         require "../templates/home.php";
     }
-    public function choice()
+    public function recipe()
     {
         $recipes = $this->apiRepository->callSpoonByIngredients();
-        require "../templates/choice.php";
+        require "../templates/recipe.php";
     }
 }
