@@ -40,7 +40,20 @@ class ManagerRepository
         } else {
             $result->execute();
         }
-
         return $result;
     }
+
+    // public function translate($chaine)
+    // {
+    //     $chaine = urlencode($chaine);
+    //     $url = 'http://translate.google.com/translate_a/t?client=p&text=' . $chaine . '&hl=en&sl=en&tl=fr&ie=UTF-8&oe=UTF-8&multires=1&otf=1&pc=1&trs=1&ssel=3&tsel=6&sc=1';
+    //     $ch = curl_init();
+    //     curl_setopt_array($ch, [
+    //         CURLOPT_URL => $url,
+    //         CURLOPT_RETURNTRANSFER => true,
+    //         CURLOPT_TIMEOUT => 1
+    //     ]);
+    //     $data = curl_exec($ch);
+    //     return $data;
+    // }
 }
