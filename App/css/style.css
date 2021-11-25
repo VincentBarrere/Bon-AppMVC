@@ -3,6 +3,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #feffde;
+  box-sizing: border-box !important;
 }
 h1,
 h2,
@@ -30,6 +31,4 @@ section-1 {
 .utilisateur {
   text-align: end;
 }
-li{
-  list-style: none;
-}
+

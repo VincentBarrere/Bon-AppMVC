@@ -19,7 +19,7 @@ class BonappController
     }
     public function recipe()
     {
-        $recipes = $this->apiRepository->callSpoonByIngredients();
+        // $recipes = $this->apiRepository->callSpoonByIngredients();
         require "../templates/recipe.php";
     }
 }
