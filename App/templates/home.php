@@ -32,7 +32,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active me-md-5" aria-current="page" href="index.php">Accueil</a>
-                        <a class="nav-link me-md-5 ms-md-5" href="#">Selection</a>
+                        <a class="nav-link me-md-5 ms-md-5" href="?route=form">Selection</a>
                         <a class="nav-link me-md-5 ms-md-5" href="?route=recipe">Recettes</a>
 
                         <li class="nav-item dropdown me-md-5 ms-md-5">

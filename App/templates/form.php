@@ -34,6 +34,7 @@
                         <a class="nav-link active me-md-5" aria-current="page" href="index.php">Accueil</a>
                         <a class="nav-link me-md-5 ms-md-5" href="?route=form">Selection</a>
                         <a class="nav-link me-md-5 ms-md-5" href="?route=recipe">Recettes</a>
+
                         <li class="nav-item dropdown me-md-5 ms-md-5">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Contact
@@ -61,20 +62,19 @@
             </div>
         </nav>
     </header>
-    <section id="section-1">
-        <div class="container mt-5">
-            <div class="row">
-                <ul class="d-flex flex-wrap justify-content-evenly">
-                    <?php foreach ($recipes as $recipe) : ?>
-                        <li class="list-group-item mb-4 ms-1 col-md-3">
-                            <h2 class="text-center fs-3"><?= $recipe["title"] ?></h2>
-                            <img class="w-100" src="<?= $recipe["img"] ?>" alt="" srcset="">
-                        </li>
-                    <?php endforeach ?>
-                </ul>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form action="?route=recipe" method="post">
+                    <input type="text" placeholder="Products" name="product">
+                    <br>
+                    <input type="submit" name="submit">
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+
     <footer>
 
     </footer>

@@ -4,7 +4,7 @@ namespace App\src\Controller;
 
 use App\src\Repository\ApiRepository;
 
-class BonappController
+class BonappController extends AbstractController
 {
     private $apiRepository;
 
@@ -15,11 +15,17 @@ class BonappController
 
     public function home()
     {
-        require "../templates/home.php";
+        $this->render("home");
     }
     public function recipe()
     {
         $recipes = $this->apiRepository->callSpoonByIngredients();
-        require "../templates/recipe.php";
+        $this->render("recipe", [
+            'recipes' => $recipes
+        ]);
+    }
+    public function form()
+    {
+        $this->render("form");
     }
 }
