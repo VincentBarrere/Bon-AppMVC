@@ -47,6 +47,9 @@
                     </div>
                 </div>
                 <?php
+
+                use App\src\Controller\BonappController;
+
                 if (!empty($_SESSION)) {
                 ?>
                     <a href="" class="btn btn-outline-primary me-2"><?php echo $_SESSION['username']; ?></a>
@@ -65,10 +68,13 @@
     <section id="section-1">
         <div class="container">
             <div class="row">
-                <div id="presentation" class="col-md-12 mt-5">
-                    <h2 class="text-center">Je ne sais pas quoi manger ?</h2>
-                    <p class="mt-4">Ne vous inquiétez pas nous avons la <strong>solution</strong>. </p>
-                </div>
+                <form action="../src/Controller/BonappController.php" method="POST" id="form_choice">
+                    <div class="mb-3 mt-5">
+                        <label class="form-label">Main Ingredient</label>
+                        <input type="text" class="form-control" name="ingredient">
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                </form>
             </div>
         </div>
     </section>

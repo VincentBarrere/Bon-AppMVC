@@ -14,12 +14,12 @@ class ApiRepository extends ManagerRepository
         $this->apiKey = $apiKey;
     }
 
-    public function callSpoonByIngredients()
+    public function callSpoonByIngredients($choice_post)
     {
         $ch = curl_init();
 
         curl_setopt_array($ch, [
-            CURLOPT_URL => "https://api.spoonacular.com/recipes/complexSearch?query=pea&number=12&apiKey={$this->apiKey}",
+            CURLOPT_URL => "https://api.spoonacular.com/recipes/complexSearch?query={$this->$choice_post}&number=12&apiKey={$this->apiKey}",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_TIMEOUT => 1
         ]);

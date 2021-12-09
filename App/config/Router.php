@@ -17,7 +17,10 @@ class Router
     {
         if (isset($_GET['route'])) {
             if ($_GET['route'] === "recipe") {
-                $this->bonAppController->recipe();
+                $this->bonAppController->recipe($choice_post);
+            }
+            if ($_GET['route'] === "choice") {
+                $this->bonAppController->choice();
             }
         } else {
             $this->bonAppController->home();

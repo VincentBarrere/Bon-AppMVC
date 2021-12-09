@@ -17,9 +17,18 @@ class BonappController
     {
         require "../templates/home.php";
     }
-    public function recipe()
+    public function choice()
     {
-        $recipes = $this->apiRepository->callSpoonByIngredients();
+        require "../templates/choice.php";
+    }
+    public function recipe($choice_post)
+    {
+        extract($choice_post);
+        if (isset($_POST)) {
+            $ingredient = $_POST['ingredient'];
+            $cleanse_ingredient = filter_var($ingredient, FILTER_SANITIZE_STRING);
+        }
+        $recipes = $this->apiRepository->callSpoonByIngredients($cleanse_ingredient);
         require "../templates/recipe.php";
     }
 }
