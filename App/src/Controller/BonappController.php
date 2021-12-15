@@ -10,7 +10,12 @@ class BonappController
 
     public function __construct()
     {
-        $this->apiRepository = new ApiRepository('c5c275385d3e48b3a9d10e5b96c15a04');
+        extract($_POST);
+        if (isset($_POST)) {
+            $ingredient = $_POST['ingredient'];
+            $choice_post = filter_var($ingredient, FILTER_SANITIZE_STRING);
+        }
+        $this->apiRepository = new ApiRepository('c5c275385d3e48b3a9d10e5b96c15a04', $choice_post);
     }
 
     public function home()
@@ -21,14 +26,9 @@ class BonappController
     {
         require "../templates/choice.php";
     }
-    public function recipe($choice_post)
+    public function recipe()
     {
-        extract($choice_post);
-        if (isset($_POST)) {
-            $ingredient = $_POST['ingredient'];
-            $cleanse_ingredient = filter_var($ingredient, FILTER_SANITIZE_STRING);
-        }
-        $recipes = $this->apiRepository->callSpoonByIngredients($cleanse_ingredient);
+        $recipes = $this->apiRepository->callSpoonByIngredients();
         require "../templates/recipe.php";
     }
 }

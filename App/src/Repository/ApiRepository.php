@@ -8,18 +8,21 @@ use App\src\Repository\ManagerRepository;
 class ApiRepository extends ManagerRepository
 {
     private $apiKey;
+    private $choice_post;
 
-    public function __construct(string $apiKey)
+    public function __construct(string $apiKey, string $choice_post)
     {
         $this->apiKey = $apiKey;
+        $this->choice_post = $choice_post;
     }
 
-    public function callSpoonByIngredients($choice_post)
+    public function callSpoonByIngredients()
     {
+
         $ch = curl_init();
 
         curl_setopt_array($ch, [
-            CURLOPT_URL => "https://api.spoonacular.com/recipes/complexSearch?query={$this->$choice_post}&number=12&apiKey={$this->apiKey}",
+            CURLOPT_URL => "https://api.spoonacular.com/recipes/complexSearch?query={$this->choice_post}&number=12&apiKey={$this->apiKey}",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_TIMEOUT => 1
         ]);
