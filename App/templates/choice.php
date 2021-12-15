@@ -71,7 +71,7 @@
                         <label class="form-label">Main Ingredient</label>
                         <input type="text" class="form-control" name="ingredient">
                     </div>
-                    <button id="post_choice" type="submit" class="btn btn-primary" name="submit">Submit</button>
+                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                 </form>
             </div>
         </div>
