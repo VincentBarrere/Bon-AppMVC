@@ -12,7 +12,7 @@ class BonappController
     {
         extract($_POST);
         if (isset($_POST)) {
-            $ingredient = $_POST['ingredient'];
+            $ingredient = $_POST;
             $choice_post = filter_var($ingredient, FILTER_SANITIZE_STRING);
         }
         $this->apiRepository = new ApiRepository('c5c275385d3e48b3a9d10e5b96c15a04', $choice_post);
